@@ -2,7 +2,13 @@ import * as React from "react";
 import { ProductTable } from "./ProductTable";
 import { SearchBar } from "./SearchBar";
 
-export const FilterableProductTable = (props: any) => {
+import { IProducts } from "../common/IProducts";
+
+interface IProps {
+    products: IProducts
+}
+
+export const FilterableProductTable = (props: IProps) => {
     const border = {
         border: "2px solid orange",
         margin: "2px",
@@ -14,8 +20,8 @@ export const FilterableProductTable = (props: any) => {
     return (
         <div style={border}>
             <SearchBar />
-            <ProductTable />
-        <div style={clear} />
+            <ProductTable products={props.products} />
+            <div style={clear} />
         </div>
     );
 }

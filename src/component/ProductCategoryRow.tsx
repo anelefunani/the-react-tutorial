@@ -1,6 +1,10 @@
 import * as React from "react";
 
-export const ProductCategoryRow = (props: any) => {
+interface IProps {
+    categoryName: string
+}
+
+export const ProductCategoryRow = (props: IProps) => {
     const rowStyle: any = {
         fontSize: "1.5em",
     }
@@ -14,7 +18,7 @@ export const ProductCategoryRow = (props: any) => {
     }
     return (
         <div style={rowStyle}>
-            <span style={spanStyle}>{props.productCategory}</span>
+            <span style={spanStyle}>{props.categoryName}</span>
         </div>
     );
 }

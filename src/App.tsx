@@ -1,14 +1,17 @@
 import * as React from 'react';
 import './App.css';
+import { IProducts } from './common/IProducts';
 import { FilterableProductTable } from './component/FilterableProductTable';
 
-class App extends React.Component {
+interface IProps {
+    products: IProducts;
+}
+
+class App extends React.Component<IProps, any> {
+
     public render() {
         const border: any = {
             margin: "0px 300px"
-        }
-        const clear: any = {
-            clear: "left"
         }
         return (
             <div className="App">
@@ -16,9 +19,8 @@ class App extends React.Component {
                     <h1 className="App-title">The React Tutorial</h1>
                 </header>
                 <div style={border}>
-                    <FilterableProductTable />
+                    <FilterableProductTable products={this.props.products} />
                 </div>
-                <div style={clear} />
             </div>
         );
     }

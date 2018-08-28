@@ -1,12 +1,15 @@
 import * as React from "react";
 import { RowTemplate } from "./RowTemplate";
 
-export const ProductRow = (props: any) => {
-    const style = {
+interface IProps {
+    description: string,
+    value: string
+}
+export const ProductRow = (props: IProps) => {
+    const style:any = {
         border: "1px solid red",
-        position: "relative",
     }
     return (
-        <RowTemplate style={style} description={props.description} detail={props.detail} />
+        <RowTemplate style={style} description={props.description} value={props.value} />
     );
 }
