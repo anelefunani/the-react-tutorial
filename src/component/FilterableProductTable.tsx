@@ -8,20 +8,41 @@ interface IProps {
     products: IProducts
 }
 
-export const FilterableProductTable = (props: IProps) => {
-    const border = {
-        border: "2px solid orange",
-        margin: "2px",
-        padding: "5px",
+export class FilterableProductTable extends React.Component<IProps, any> {
+
+    public constructor(props: IProps) {
+        super(props);
+        this.state = {
+            filterText: "",
+            inStockOnly: false,
+        }
     }
-    const clear: any = {
-        clear: "left"
+
+    public render() {
+        const border = {
+            border: "2px solid orange",
+            margin: "2px",
+            padding: "5px",
+        }
+        const clear: any = {
+            clear: "left"
+        }
+        return (
+            <div style={border}>
+                <SearchBar onFilterTextChange={this.handleFilterTextChange} inStockOnly={this.state.inStockOnly} filterText={this.state.filterText}/>
+                <ProductTable onOnlyInStockChange={this.handleOnlyInStockChange} products={this.props.products} filterText={this.state.filterText} inStockOnly={this.state.inStockOnly} />
+                <div style={clear} />
+            </div>
+        );
     }
-    return (
-        <div style={border}>
-            <SearchBar />
-            <ProductTable products={props.products} />
-            <div style={clear} />
-        </div>
-    );
+
+    public handleFilterTextChange = (e: any) => {
+        // tslint:disable-next-line
+        this.setState(({filterText: e}));
+    }
+
+    public handleOnlyInStockChange = (e: any) => {
+         // tslint:disable-next-line
+         this.setState(({inStockOnly: e}));
+    }
 }
