@@ -31,7 +31,7 @@ export class SearchBar extends React.Component<any, {}> {
         this.props.onFilterTextChange(e.target.value);
     }
 
-    public handleOnlyInStockChange = (e: any) => {
+    public handleOnlyInStockChange (e: any) {
         // tslint:disable-next-line
         console.log(e.target.checked);
         this.props.onOnlyInStockChange(e.target.checked);

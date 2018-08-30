@@ -36,13 +36,11 @@ export class FilterableProductTable extends React.Component<IProps, any> {
         );
     }
 
-    public handleFilterTextChange = (e: any) => {
-        // tslint:disable-next-line
-        this.setState(({filterText: e}));
+    public handleFilterTextChange = (newFilterText: string) => {
+        this.setState(({filterText: newFilterText}));
     }
 
-    public handleOnlyInStockChange = (e: any) => {
-         // tslint:disable-next-line
-         this.setState(({inStockOnly: e}));
+    public handleOnlyInStockChange = (newInStockOnly: boolean) => {
+         this.setState(({inStockOnly: newInStockOnly}));
     }
 }
