@@ -9,7 +9,7 @@ import { GroupByKey } from "../common/utils/Utils";
 
 export const ProductTable = (props: any) => {
     const style: any = {
-        border: "2px solid lightGreen",
+        // border: "2px solid lightGreen",
         display: "inline-block",
         padding: "2px",
         width: "100%",

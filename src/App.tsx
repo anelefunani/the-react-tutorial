@@ -15,7 +15,7 @@ const products = {
 class App extends React.Component {
 
     public render() {
-        const border: any = {
+        const sideCols: any = {
             margin: "0px 300px"
         }
         return (
@@ -23,7 +23,7 @@ class App extends React.Component {
                 <header className="App-header">
                     <h1 className="App-title">The React Tutorial</h1>
                 </header>
-                <div style={border}>
+                <div style={sideCols}>
                     <FilterableProductTable products={products}/>
                 </div>
             </div>

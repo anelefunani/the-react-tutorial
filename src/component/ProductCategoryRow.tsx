@@ -9,7 +9,7 @@ export const ProductCategoryRow = (props: IProps) => {
         fontSize: "1.5em",
     }
     const spanStyle: any = {
-        border: "1px solid turquoise",
+        // border: "1px solid turquoise",
         display: "block",
         float: "left",
         padding: "5px 10px",
@@ -17,8 +17,8 @@ export const ProductCategoryRow = (props: IProps) => {
         width: "99%"
     }
     return (
-        <div style={rowStyle}>
-            <span style={spanStyle}>{props.categoryName}</span>
+        <div style={rowStyle} className="list-group">
+            <span style={spanStyle} className="list-group-item">{props.categoryName}</span>
         </div>
     );
 }

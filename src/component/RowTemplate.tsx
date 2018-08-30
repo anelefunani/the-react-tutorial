@@ -9,9 +9,10 @@ interface IProps {
 export const RowTemplate = (props: IProps) => {
     const rowStyle: any = {
         fontSize: "1.5em",
+        listStyle: "none",
     }
     const spanStyle: any = {
-        border: "1px solid red",
+        // border: "1px solid red",
         display: "block",
         float: "left",
         margin: "2px",
@@ -20,8 +21,8 @@ export const RowTemplate = (props: IProps) => {
         width: "49%"
     }
     return (
-        <div style={rowStyle}>
-            <span style={spanStyle}>{props.description}</span><span style={spanStyle}>{props.value}</span>
-        </div>
+        <ul style={rowStyle} className="list-group">
+            <li><span className="list-group-item" style={spanStyle} >{props.description}</span><span className="list-group-item" style={spanStyle} >{props.value}</span></li>
+        </ul>
     );
 }

@@ -20,7 +20,7 @@ export class FilterableProductTable extends React.Component<IProps, any> {
 
     public render() {
         const border = {
-            border: "2px solid orange",
+            // border: "2px solid orange",
             margin: "2px",
             padding: "5px",
         }
